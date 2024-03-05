@@ -1,7 +1,7 @@
 // Importing React
 import { useEffect, useState } from "react";
 import { headers } from "../api/headers";
-require("dotenv").config();
+
 
 /**
  * Function to call a api to receive data
@@ -20,21 +20,24 @@ const useApi = (endpoint, method, body) => {
  const [isLoading, setIsLoading] = useState(false);
  const [isError, setIsError] = useState(false);
 
- const url = `${process.evn.API_URL}` || "www.example.com";
- const apiKeyFlag = `?key=${process.evn.API_KEY}`;
-
+ const url = `https://api.noroff.dev/api/v1/social` || "www.example.com";
+ 
  useEffect(() => {
   async function getData() {
    try {
     setIsLoading(true);
     setIsError(false);
-    const fetchedData = await fetch(url + endpoint + apiKeyFlag, {
+    const fetchedData = await fetch(url + endpoint, {
      method: method,
      headers: headers("application/json"),
      body: JSON.stringify(body),
     });
     const json = await fetchedData.json();
     setData(json);
+    // Check if the endpoint is for logging in, and if so, store the data in localStorage
+    if (endpoint === '/login') {
+      localStorage.setItem("loggedInUserData", JSON.stringify(json));
+    }
    } catch (error) {
     console.log(error);
     setIsError(true);
@@ -44,6 +47,7 @@ const useApi = (endpoint, method, body) => {
   }
   getData();
  }, [endpoint, method, body]);
+ 
  return { data, isLoading, isError };
 };
 

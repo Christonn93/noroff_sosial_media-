@@ -1,8 +1,15 @@
 import React from "react";
 
 import { Box, Button } from "@mui/material";
+import useApi from "../hooks/useApi";
+import { updateHead } from "../js/updateHeader";
 
 const Home = () => {
+ updateHead("Home");
+ const data = useApi("/posts", "get");
+
+ console.log(data);
+
  return (
   <>
    <Box

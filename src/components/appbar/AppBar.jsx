@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "./logo.png";
 
 import "./AppBar.css";
+import { Link } from "react-router-dom";
 
 const PageBar = () => {
  const [anchorElNav, setAnchorElNav] = useState(null);
@@ -27,7 +28,7 @@ const PageBar = () => {
   setAnchorElUser(null);
  };
 
- const pages = ["Feed", "Following"];
+ const pages = ["Home", "Following"];
  const settings = ["Profile", "Logout"];
 
  <Box
@@ -80,7 +81,8 @@ const PageBar = () => {
       >
        {pages.map((page) => (
         <MenuItem key={page} onClick={handleCloseNavMenu}>
-         <Typography textAlign="center">{page}</Typography>
+         <Typography textAlign="center">
+         <Link to={page}>{page}</Link></Typography>
         </MenuItem>
        ))}
       </Menu>
@@ -106,7 +108,7 @@ const PageBar = () => {
       ))}
      </Box>
 
-     <Box sx={{ flexGrow: 0 }}>
+     <Box sx={{ flexGrow: 1 }}>
       <Tooltip title="Open settings">
        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
         <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -130,7 +132,8 @@ const PageBar = () => {
       >
        {settings.map((setting) => (
         <MenuItem key={setting} onClick={handleCloseUserMenu}>
-         <Typography textAlign="center">{setting}</Typography>
+        <Typography textAlign="center">
+         <Link to={setting}>{setting}</Link></Typography>
         </MenuItem>
        ))}
       </Menu>
