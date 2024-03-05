@@ -1,25 +1,25 @@
-import { Box, Button, Paper, Typography } from "@mui/material";
 import React from "react";
 
+import { Box, Button } from "@mui/material";
+
 const Home = () => {
- return <>
- <Box
- sx={{
-    display: "flex",
-    gap: 2
- }}
- >
-    <Button color="primary" variant="contained">Primary Button</Button>
-    <Button color="secondary" variant="contained">Secondary Button</Button>
- </Box>
-
-<Box mt={2} p={1}>
-    <Paper>
-        <Typography variant="h1">This is a h1 heading</Typography>
-    </Paper>
-</Box>
-
- </>;
+ return (
+  <>
+   <Box
+    sx={{
+     display: "flex",
+     gap: 2,
+    }}
+   >
+    <Button color="primary" variant="contained">
+     Primary Button
+    </Button>
+    <Button color="secondary" variant="contained">
+     Secondary Button
+    </Button>
+   </Box>
+  </>
+ );
 };
 
 export default Home;
