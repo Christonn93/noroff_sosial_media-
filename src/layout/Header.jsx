@@ -1,17 +1,11 @@
 import React from "react";
 
-import { Box } from "@mui/material";
+import PageBar from "../components/appbar/AppBar.jsx";
 
 const Header = () => {
  return (
   <>
-   <Box
-    sx={{
-     display: "flex",
-     justifyContent: "space-between",
-     p: 2,
-    }}
-   ></Box>
+    <PageBar />
   </>
  );
 };

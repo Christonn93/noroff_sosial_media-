@@ -14,6 +14,7 @@ import NotFound from "./routes/NotFound";
 
 // Importing Theme
 import { ColorModeContext, useMode } from "../src/style/Theme";
+import Login from "./routes/Login";
 
 const App = () => {
  const [theme, colorMode] = useMode();
@@ -24,8 +25,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
      <CssBaseline />
      <Routes>
-      <Route path="/" element={<Layout />}>
-       <Route index path="/home" element={<Home />} />
+      <Route element={<Layout />}>
+       <Route index element={<Login />} />
+       <Route path="/home" element={<Home />} />
        <Route path="*" element={<NotFound />} />
       </Route>
      </Routes>

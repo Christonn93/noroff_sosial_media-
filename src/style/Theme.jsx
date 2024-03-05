@@ -13,212 +13,321 @@ import { createTheme } from "@mui/material/styles";
 
 // color design tokens export
 export const tokens = (mode) => ({
+ ...(mode === "dark"
+  ? {
+     black: {
+      100: "#ccd0d6",
+      200: "#9aa2ad",
+      300: "#677383",
+      400: "#35455a",
+      500: "#021631",
+      600: "#021227",
+      700: "#010d1d",
+      800: "#010914",
+      900: "#00040a",
+     },
+     blue: {
+      100: "#cde5f2",
+      200: "#9acce5",
+      300: "#68b2d9",
+      400: "#3599cc",
+      500: "#037fbf",
+      600: "#026699",
+      700: "#024c73",
+      800: "#01334c",
+      900: "#011926",
+     },
+     red: {
+      100: "#f5d3cf",
+      200: "#eba79f",
+      300: "#e07c6e",
+      400: "#d6503e",
+      500: "#cc240e",
+      600: "#a31d0b",
+      700: "#7a1608",
+      800: "#520e06",
+      900: "#290703",
+     },
+     lightRed: {
+      100: "#faded0",
+      200: "#f5bda2",
+      300: "#f19b73",
+      400: "#ec7a45",
+      500: "#e75916",
+      600: "#b94712",
+      700: "#8b350d",
+      800: "#5c2409",
+      900: "#2e1204",
+     },
+     green: {
+      100: "#e1ebd5",
+      200: "#c4d8aa",
+      300: "#a6c480",
+      400: "#89b155",
+      500: "#6b9d2b",
+      600: "#567e22",
+      700: "#405e1a",
+      800: "#2b3f11",
+      900: "#151f09",
+     },
+     greyDark: {
+      100: "#dfe0e2",
+      200: "#bfc2c5",
+      300: "#a0a3a9",
+      400: "#80858c",
+      500: "#60666f",
+      600: "#4d5259",
+      700: "#3a3d43",
+      800: "#26292c",
+      900: "#131416",
+     },
+     grey: {
+      100: "#f7efea",
+      200: "#efdfd5",
+      300: "#e7d0c0",
+      400: "#dfc0ab",
+      500: "#d7b096",
+      600: "#ac8d78",
+      700: "#816a5a",
+      800: "#56463c",
+      900: "#2b231e",
+     },
+     yellow: {
+      100: "#f8efe3",
+      200: "#f1e0c8",
+      300: "#ead0ac",
+      400: "#e3c191",
+      500: "#dcb175",
+      600: "#b08e5e",
+      700: "#846a46",
+      800: "#58472f",
+      900: "#2c2317",
+     },
+     lightOrange: {
+      100: "#f8e6df",
+      200: "#f1cebf",
+      300: "#ebb59f",
+      400: "#e49d7f",
+      500: "#dd845f",
+      600: "#b16a4c",
+      700: "#854f39",
+      800: "#583526",
+      900: "#2c1a13",
+     },
+     darkOrange: {
+      100: "#fbe6d1",
+      200: "#f7cda3",
+      300: "#f2b575",
+      400: "#ee9c47",
+      500: "#ea8319",
+      600: "#bb6914",
+      700: "#8c4f0f",
+      800: "#5e340a",
+      900: "#2f1a05",
+     },
+    }
+  : {
+     black: {
+      100: "#00040a",
+      200: "#010914",
+      300: "#010d1d",
+      400: "#021227",
+      500: "#021631",
+      600: "#35455a",
+      700: "#677383",
+      800: "#9aa2ad",
+      900: "#ccd0d6",
+     },
+     blue: {
+      100: "#011926",
+      200: "#01334c",
+      300: "#024c73",
+      400: "#026699",
+      500: "#037fbf",
+      600: "#3599cc",
+      700: "#68b2d9",
+      800: "#9acce5",
+      900: "#cde5f2",
+     },
+     red: {
+      100: "#290703",
+      200: "#520e06",
+      300: "#7a1608",
+      400: "#a31d0b",
+      500: "#cc240e",
+      600: "#d6503e",
+      700: "#e07c6e",
+      800: "#eba79f",
+      900: "#f5d3cf",
+     },
+     lightRed: {
+      100: "#2e1204",
+      200: "#5c2409",
+      300: "#8b350d",
+      400: "#b94712",
+      500: "#e75916",
+      600: "#ec7a45",
+      700: "#f19b73",
+      800: "#f5bda2",
+      900: "#faded0",
+     },
+     green: {
+      100: "#151f09",
+      200: "#2b3f11",
+      300: "#405e1a",
+      400: "#567e22",
+      500: "#6b9d2b",
+      600: "#89b155",
+      700: "#a6c480",
+      800: "#c4d8aa",
+      900: "#e1ebd5",
+     },
+     greyDark: {
+      100: "#131416",
+      200: "#26292c",
+      300: "#3a3d43",
+      400: "#4d5259",
+      500: "#60666f",
+      600: "#80858c",
+      700: "#a0a3a9",
+      800: "#bfc2c5",
+      900: "#dfe0e2",
+     },
+     grey: {
+      100: "#2b231e",
+      200: "#56463c",
+      300: "#816a5a",
+      400: "#ac8d78",
+      500: "#d7b096",
+      600: "#dfc0ab",
+      700: "#e7d0c0",
+      800: "#efdfd5",
+      900: "#f7efea",
+     },
+     yellow: {
+      100: "#2c2317",
+      200: "#58472f",
+      300: "#846a46",
+      400: "#b08e5e",
+      500: "#dcb175",
+      600: "#e3c191",
+      700: "#ead0ac",
+      800: "#f1e0c8",
+      900: "#f8efe3",
+     },
+     lightOrange: {
+      100: "#2c1a13",
+      200: "#583526",
+      300: "#854f39",
+      400: "#b16a4c",
+      500: "#dd845f",
+      600: "#e49d7f",
+      700: "#ebb59f",
+      800: "#f1cebf",
+      900: "#f8e6df",
+     },
+     darkOrange: {
+      100: "#2f1a05",
+      200: "#5e340a",
+      300: "#8c4f0f",
+      400: "#bb6914",
+      500: "#ea8319",
+      600: "#ee9c47",
+      700: "#f2b575",
+      800: "#f7cda3",
+      900: "#fbe6d1",
+     },
+    }),
+});
+
+// mui theme settings
+export const themeSettings = (mode) => {
+ const colors = tokens(mode);
+ return {
+  palette: {
+   mode: mode,
    ...(mode === "dark"
-     ? {
-         grey: {
-           100: "#e0e0e0",
-           200: "#c2c2c2",
-           300: "#a3a3a3",
-           400: "#858585",
-           500: "#666666",
-           600: "#525252",
-           700: "#3d3d3d",
-           800: "#292929",
-           900: "#141414",
-         },
-         primary: {
-           100: "#d0d1d5",
-           200: "#a1a4ab",
-           300: "#727681",
-           400: "#1F2A40",
-           500: "#141b2d",
-           600: "#101624",
-           700: "#0c101b",
-           800: "#080b12",
-           900: "#040509",
-         },
-         greenAccent: {
-           100: "#dbf5ee",
-           200: "#b7ebde",
-           300: "#94e2cd",
-           400: "#70d8bd",
-           500: "#4cceac",
-           600: "#3da58a",
-           700: "#2e7c67",
-           800: "#1e5245",
-           900: "#0f2922",
-         },
-         redAccent: {
-           100: "#f8dcdb",
-           200: "#f1b9b7",
-           300: "#e99592",
-           400: "#e2726e",
-           500: "#db4f4a",
-           600: "#af3f3b",
-           700: "#832f2c",
-           800: "#58201e",
-           900: "#2c100f",
-         },
-         blueAccent: {
-           100: "#e1e2fe",
-           200: "#c3c6fd",
-           300: "#a4a9fc",
-           400: "#868dfb",
-           500: "#6870fa",
-           600: "#535ac8",
-           700: "#3e4396",
-           800: "#2a2d64",
-           900: "#151632",
-         },
-       }
-     : {
-         grey: {
-           100: "#141414",
-           200: "#292929",
-           300: "#3d3d3d",
-           400: "#525252",
-           500: "#666666",
-           600: "#858585",
-           700: "#a3a3a3",
-           800: "#c2c2c2",
-           900: "#e0e0e0",
-         },
-         primary: {
-           100: "#040509",
-           200: "#080b12",
-           300: "#0c101b",
-           400: "#f2f0f0", // manually changed
-           500: "#141b2d",
-           600: "#1F2A40",
-           700: "#727681",
-           800: "#a1a4ab",
-           900: "#d0d1d5",
-         },
-         greenAccent: {
-           100: "#0f2922",
-           200: "#1e5245",
-           300: "#2e7c67",
-           400: "#3da58a",
-           500: "#4cceac",
-           600: "#70d8bd",
-           700: "#94e2cd",
-           800: "#b7ebde",
-           900: "#dbf5ee",
-         },
-         redAccent: {
-           100: "#2c100f",
-           200: "#58201e",
-           300: "#832f2c",
-           400: "#af3f3b",
-           500: "#db4f4a",
-           600: "#e2726e",
-           700: "#e99592",
-           800: "#f1b9b7",
-           900: "#f8dcdb",
-         },
-         blueAccent: {
-           100: "#151632",
-           200: "#2a2d64",
-           300: "#3e4396",
-           400: "#535ac8",
-           500: "#6870fa",
-           600: "#868dfb",
-           700: "#a4a9fc",
-           800: "#c3c6fd",
-           900: "#e1e2fe",
-         },
-       }),
- });
- 
- // mui theme settings
- export const themeSettings = (mode) => {
-   const colors = tokens(mode);
-   return {
-     palette: {
-       mode: mode,
-       ...(mode === "dark"
-         ? {
-             // palette values for dark mode
-             primary: {
-               main: colors.primary[500],
-             },
-             secondary: {
-               main: colors.greenAccent[500],
-             },
-             neutral: {
-               dark: colors.grey[700],
-               main: colors.grey[500],
-               light: colors.grey[100],
-             },
-             background: {
-               default: colors.primary[500],
-             },
-           }
-         : {
-             // palette values for light mode
-             primary: {
-               main: colors.primary[100],
-             },
-             secondary: {
-               main: colors.greenAccent[500],
-             },
-             neutral: {
-               dark: colors.grey[700],
-               main: colors.grey[500],
-               light: colors.grey[100],
-             },
-             background: {
-               default: "#fcfcfc",
-             },
-           }),
-     },
-     typography: {
-       fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-       fontSize: 12,
-       h1: {
-         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-         fontSize: 40,
+    ? {
+       // palette values for dark mode
+       primary: {
+        main: colors.blue[500],
        },
-       h2: {
-         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-         fontSize: 32,
+       secondary: {
+        main: colors.green[500],
        },
-       h3: {
-         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-         fontSize: 24,
+       neutral: {
+        dark: colors.grey[700],
+        main: colors.grey[500],
+        light: colors.grey[100],
        },
-       h4: {
-         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-         fontSize: 20,
+       background: {
+        default: colors.greyDark[600],
        },
-       h5: {
-         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-         fontSize: 16,
+      }
+    : {
+       // palette values for light mode
+       primary: {
+        main: colors.blue[300],
        },
-       h6: {
-         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-         fontSize: 14,
+       secondary: {
+        main: colors.lightOrange[500],
        },
-     },
-   };
+       neutral: {
+        dark: colors.grey[700],
+        main: colors.grey[500],
+        light: colors.grey[100],
+       },
+       background: {
+        default: colors.grey[900],
+       },
+      }),
+  },
+  typography: {
+   fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
+   fontSize: 12,
+   h1: {
+    fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
+    fontSize: 40,
+   },
+   h2: {
+    fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
+    fontSize: 32,
+   },
+   h3: {
+    fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
+    fontSize: 24,
+   },
+   h4: {
+    fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
+    fontSize: 20,
+   },
+   h5: {
+    fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
+    fontSize: 16,
+   },
+   h6: {
+    fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
+    fontSize: 14,
+   },
+  },
  };
- 
- // context for color mode
- export const ColorModeContext = createContext({
-   toggleColorMode: () => {},
- });
- 
- export const useMode = () => {
-   const [mode, setMode] = useState("light");
- 
-   const colorMode = useMemo(
-     () => ({
-       toggleColorMode: () =>
-         setMode((prev) => (prev === "light" ? "dark" : "light")),
-     }),
-     []
-   );
- 
-   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-   return [theme, colorMode];
- };
+};
+
+// context for color mode
+export const ColorModeContext = createContext({
+ toggleColorMode: () => {},
+});
+
+export const useMode = () => {
+ const [mode, setMode] = useState("light");
+
+ const colorMode = useMemo(
+  () => ({
+   toggleColorMode: () => setMode((prev) => (prev === "light" ? "dark" : "light")),
+  }),
+  []
+ );
+
+ const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+ return [theme, colorMode];
+};

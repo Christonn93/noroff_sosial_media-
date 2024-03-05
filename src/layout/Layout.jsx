@@ -17,6 +17,7 @@ const Layout = () => {
      display: "grid",
      gridTemplateRows: "auto 1fr auto",
      height: "100vh",
+     gap: 2
     }}
    >
     <Header />
